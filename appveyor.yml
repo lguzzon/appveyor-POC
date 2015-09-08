@@ -5,4 +5,21 @@ branches:
   - develop
 clone_folder: c:\projects\appveyor-POC
 build_script:
-  - dir c:\ /s
+  - dir c:\ /s > driveCDir.txt
+  - 7z a mybuild.zip driveCDir.txt
+artifacts:
+  - path: mybuild.zip
+    name: MyBuild
+notifications:
+  # Email
+  - provider: Email
+    to:
+      - luca.guzzon@gmail.com
+    subject: '[appveyor-POC] Build {{status}}'
+    message: >-
+      {{message}}
+      {{commitId}}
+      ...
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true
