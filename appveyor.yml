@@ -1,0 +1,8 @@
+version: 0.0.{build}-ALPHA
+branches:
+  only:
+  - master
+  - develop
+clone_folder: c:\projects\appveyor-POC
+build_script:
+  - dir c:/ \s
