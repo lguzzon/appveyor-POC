@@ -5,8 +5,7 @@ branches:
   - develop
 clone_folder: c:\projects\appveyor-POC
 build_script:
-
-  *- dir "C:\Program Files\AppVeyor" /s > driveCDir.txt
+  - dir "C:\Program Files\AppVeyor" /s > driveCDir.txt
   - 7z a mybuild.zip driveCDir.txt
 artifacts:
   - path: mybuild.zip
