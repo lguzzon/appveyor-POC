@@ -5,4 +5,4 @@ branches:
   - develop
 clone_folder: c:\projects\appveyor-POC
 build_script:
-  - dir c:/ \s
+  - dir c:\ /s
